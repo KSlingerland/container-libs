@@ -303,7 +303,8 @@ func timeIfNotZero(t *time.Time) *time.Time {
 	if t == nil || t.IsZero() {
 		return nil
 	}
-	return t
+	utc := t.UTC()
+	return &utc
 }
 
 // NewFileMetadata creates a basic FileMetadata entry for hdr.
